@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'chaps-lib-button',
@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class ButtonComponent {
 
+  @Input() buttonLabel = '';
+  @Input() buttonClass = '';
+  @Output() onClicked = new EventEmitter();
+
+  onButtonClicked(): void {
+    this.onClicked.emit();
+  }
 }

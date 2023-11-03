@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'chaps-angular-library';
+
+  onClickButton(): void {
+    console.log("Button was just clicked");
+  }
 }
