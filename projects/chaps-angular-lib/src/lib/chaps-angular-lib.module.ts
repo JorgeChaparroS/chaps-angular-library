@@ -5,6 +5,7 @@ import { InputComponent } from './components/input/input.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import { MainThemeComponent } from './components/main-theme/main-theme.component';
+import { JorgechaparroCvComponent } from './components/jorgechaparro-cv/jorgechaparro-cv.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -15,7 +16,8 @@ import { CommonModule } from '@angular/common';
     InputComponent,
     LoaderComponent,
     PaginatorComponent,
-    MainThemeComponent
+    MainThemeComponent,
+    JorgechaparroCvComponent
   ],
   imports: [
     FormsModule,
@@ -27,7 +29,8 @@ import { CommonModule } from '@angular/common';
     InputComponent,
     LoaderComponent,
     PaginatorComponent,
-    MainThemeComponent
+    MainThemeComponent,
+    JorgechaparroCvComponent
   ]
 })
 export class ChapsAngularLibModule { }

@@ -17,22 +17,25 @@ export class AppComponent {
 
   title = 'chaps-angular-library';
 
+  //For input:
   emitterValueInput = '';
   ngModelValueInput = '';
-
-  inputReactiveForm: FormGroup = new FormGroup({
-    inputName: new FormControl('', [])
-  });
-  
-  onClickButton(): void {
-    console.log("Button was just clicked");
-  }
 
   onInputChange(value: any): void {
     console.log("Value input: ", value);
     this.emitterValueInput = value;
   }
 
+  inputReactiveForm: FormGroup = new FormGroup({
+    inputName: new FormControl('', [])
+  });
+  
+  //For buttons:
+  onClickButton(): void {
+    console.log("Button was just clicked");
+  }
+
+  //For loader:
   showLoader = false;
   onShowLoader(): void {
     this.showLoader = true;
@@ -48,4 +51,20 @@ export class AppComponent {
     }, 3000);
   }
 
+  //For paginator: 
+  paginatorCurrentPage = 5;
+  onPaginationEvent(page: any): void {
+    console.log("Current page: ", page);
+    this.paginatorCurrentPage = page;
+  }
+
+  //For JorgeChaparro's CV:
+  showCV = false;
+  onShowCV(): void {
+    this.showCV = true;
+  }
+
+  onHideCV(): void {
+    this.showCV = false;
+  }
 }
