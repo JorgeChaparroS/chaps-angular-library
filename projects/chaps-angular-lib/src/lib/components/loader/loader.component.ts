@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'chaps-lib-loader',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./loader.component.scss']
 })
 export class LoaderComponent {
-
+  @Input() showLoading: boolean = false;
+  @Input() loaderMessage: string = '';
+  @Input() customImageUrl: string = '';
 }

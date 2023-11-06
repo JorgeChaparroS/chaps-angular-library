@@ -98,25 +98,43 @@
 
         <section class="row">
             <h2>Loader:</h2>
-            <article class="col-3">
+            <h5>Characteristics:</h5>
+            <ul>
+                <li class="text m-0">Inputs: Loader has 'showLoading' (boolean that indicates when to show or hide the loader), 'loaderMessage' (optional, if not defined, message will not be shown) and 'customImageUrl' (optional, if not defined, a default gif will be shown) inputs.</li>
+                <li class="text m-0">There is also a service that you can use to manipulate the loader visibility and message, in case that you are using the loader for an entire app and not just one component.</li>
+            </ul>
+            <div class="col-12 col-md-6 col-xl-3 mb-2">
                 <chaps-lib-button 
                     [buttonLabel]="'Click me to show loader!'"
-                    [buttonClass]="'success'"
-                    (onClicked)="onClickButton()">
+                    [buttonClass]="'primary'"
+                    (onClicked)="onShowLoader()">
                 </chaps-lib-button>
-            </article>
-            <chaps-lib-loader></chaps-lib-loader>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 mb-2">
+                <chaps-lib-button 
+                    [buttonLabel]="'Click me to show loader using its service!'"
+                    [buttonClass]="'dark'"
+                    (onClicked)="onShowLoaderService()">
+                </chaps-lib-button>
+            </div>
+            <chaps-lib-loader 
+                [showLoading]="showLoader"
+                [loaderMessage]="'Loading...'"></chaps-lib-loader>
+            <chaps-lib-loader 
+                [showLoading]="loaderService.getLoading()"
+                [loaderMessage]="loaderService.getMessage()"
+                [customImageUrl]="'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Naruto_Shiki_Fujin.svg/1200px-Naruto_Shiki_Fujin.svg.png'"></chaps-lib-loader>
         </section>
 
         <section class="row">
             <h2>Alerts:</h2>
-            <article class="col-3">
+            <div class="col-12 col-md-6 col-xl-3 mb-2">
                 <chaps-lib-button 
                     [buttonLabel]="'Click me to show alerts!'"
                     [buttonClass]="'success'"
                     (onClicked)="onClickButton()">
                 </chaps-lib-button>
-            </article>
+            </div>
             <chaps-lib-alert></chaps-lib-alert>
         </section>
     </div>
