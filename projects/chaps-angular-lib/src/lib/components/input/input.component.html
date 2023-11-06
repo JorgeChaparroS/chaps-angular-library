@@ -1,1 +1,5 @@
-<p>input works!</p>
+<input type="text"
+    class="text w-100 py-1 px-2"
+    [placeholder]="placeholder"
+    [(ngModel)]="valueInput"
+    (ngModelChange)="updateChanges()">

@@ -3,48 +3,90 @@
 
     <section class="p-4 border">
         <h1 class="mb-3">Tags and classes for typography: </h1>
-        <h1>Así se ve el contenido de una etiqueta H1</h1>
-        <h2>Así se ve el contenido de una etiqueta H2</h2>
-        <h3>Así se ve el contenido de una etiqueta H3</h3>
-        <h4>Así se ve el contenido de una etiqueta H4</h4>
-        <h5>Así se ve el contenido de una etiqueta H5</h5>
-        <h6>Así se ve el contenido de una etiqueta H6</h6>
-        <p>Así se ve el contenido de una etiqueta p</p>
+        <h1>This is how tag H1 or class .h1 look like</h1>
+        <h2>This is how tag H2 or class .h2 look like</h2>
+        <h3>This is how tag H3 or class .h3 look like</h3>
+        <h4>This is how tag H4 or class .h4 look like</h4>
+        <h5>This is how tag H5 or class .h5 look like</h5>
+        <h6>This is how tag H6 or class .h6 look like</h6>
+        <p class="text">This is how class .text looks like</p>
+        <p class="small-text">This is how class .small-text looks like</p>
     </section>
 
-    <div class="p-4 border row">
+    <div class="p-4 border row m-0">
         <h1 class="mb-3">Components and widgets:</h1>
 
-        <section class="row">
+        <section class="row mb-3">
             <h2>Buttons:</h2>
-            <article class="col-3">
+            <h5>Characteristics:</h5>
+            <ul>
+                <li class="text m-0">Inputs: They expect 'buttonLabel' (for its label) and 'buttonClass' (to apply bootstrap styling such as colors)</li>
+                <li class="text m-0">Outputs: They have 'onClicked' output, which will emit when button is clicked.</li>
+                <li class="text m-0">They will be its container width</li>
+            </ul>
+            <div class="col-12 col-md-6 col-xl-3 mb-2">
                 <chaps-lib-button 
-                    [buttonLabel]="'Click me!'"
+                    [buttonLabel]="'Click success button!'"
                     [buttonClass]="'success'"
                     (onClicked)="onClickButton()">
                 </chaps-lib-button>
-            </article>
-            <article class="col-3">
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 mb-2">
                 <chaps-lib-button 
-                    [buttonLabel]="'Click me!'"
+                    [buttonLabel]="'Click info button!'"
                     [buttonClass]="'info'"
                     (onClicked)="onClickButton()">
                 </chaps-lib-button>
-            </article>
-            <article class="col-3">
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 mb-2">
                 <chaps-lib-button 
-                    [buttonLabel]="'Click me!'"
+                    [buttonLabel]="'Click warning button!'"
                     [buttonClass]="'warning'"
                     (onClicked)="onClickButton()">
                 </chaps-lib-button>
-            </article>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 mb-2">
+                <chaps-lib-button 
+                    [buttonLabel]="'Click danger button!'"
+                    [buttonClass]="'danger'"
+                    (onClicked)="onClickButton()">
+                </chaps-lib-button>
+            </div>
         </section>
 
         <section class="row">
             <h2>Input:</h2>
-            <article class="col-3">
-                <chaps-lib-input></chaps-lib-input>
-            </article>
+            <h5>Characteristics:</h5>
+            <ul>
+                <li class="text m-0">Inputs: They expect 'placeholder' (for its placeholder)</li>
+                <li class="text m-0">Outputs: They have 'onValueChange' output, which will emit the current input value everytime it changes.</li>
+                <li class="text m-0">To get the input value, it is also possible using NgModel and reactive forms.</li>
+                <li class="text m-0">They will be its container width</li>
+            </ul>
+            <div class="col-6 col-xl-3 mb-2">
+                <chaps-lib-input 
+                    [placeholder]="'Input using its output'"
+                    (onValueChange)="onInputChange($event)"></chaps-lib-input>
+            </div>
+            <div class="col-6 col-xl-3 mb-2">
+                <p class="text">Value input using its emitter: {{ emitterValueInput }}</p>
+            </div>
+            <div class="col-6 col-xl-3 mb-2">
+                <chaps-lib-input 
+                    [placeholder]="'Input using its output'"
+                    [(ngModel)]="ngModelValueInput"></chaps-lib-input>
+            </div>
+            <div class="col-6 col-xl-3 mb-2">
+                <p class="text">Value input using ngModel: {{ ngModelValueInput }}</p>
+            </div>
+            <form [formGroup]="inputReactiveForm" class="col-6 col-xl-3 mb-2">
+                <chaps-lib-input 
+                    [formControlName]="'inputName'"
+                    [placeholder]="'Input using reactive forms'"></chaps-lib-input>
+            </form>
+            <div class="col-6 col-xl-3 mb-2">
+                <p class="text">Value input using reactive forms: {{ inputReactiveForm.get('inputName')?.value }}</p>
+            </div>
         </section>
 
         <section class="row">

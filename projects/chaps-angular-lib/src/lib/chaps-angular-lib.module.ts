@@ -5,6 +5,7 @@ import { InputComponent } from './components/input/input.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import { MainThemeComponent } from './components/main-theme/main-theme.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MainThemeComponent } from './components/main-theme/main-theme.component
     MainThemeComponent
   ],
   imports: [
+    FormsModule
   ],
   exports: [
     AlertComponent,
