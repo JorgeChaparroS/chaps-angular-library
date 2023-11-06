@@ -10,4 +10,4 @@ This application is just a landing page to show the components defined in the ch
 4. Run the application with "npm run start" or "ng serve"
 
 # Website: 
-If you do not want to install and launch the project locally, you can always go and check it online here: 
+If you do not want to install and launch the project locally, you can always go and check it online here: https://chaps-angular-lib.netlify.app/

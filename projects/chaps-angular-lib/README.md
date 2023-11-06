@@ -1,6 +1,6 @@
 # ChapsAngularLib
 
-Library for Angular reusable components based on bootstrap.
+Library for Angular reusable components based on bootstrap. Go check it out here: https://chaps-angular-lib.netlify.app/
 
 ## Build
 
