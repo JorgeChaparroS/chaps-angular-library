@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { LoaderService } from 'chaps-angular-lib';
+import { LoaderService, AlertService } from 'chaps-angular-lib';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,8 @@ import { LoaderService } from 'chaps-angular-lib';
 })
 export class AppComponent {
 
-  constructor(public loaderService: LoaderService) {
+  constructor(public loaderService: LoaderService,
+    public alertService: AlertService) {
     this.loaderService.setLoading(false);
     this.loaderService.setMessage('Another message');
   }
@@ -46,4 +47,5 @@ export class AppComponent {
       this.loaderService.setLoading(false);
     }, 3000);
   }
+
 }

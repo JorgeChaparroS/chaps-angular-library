@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AlertService } from './alert.service';
 
 @Component({
   selector: 'chaps-lib-alert',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./alert.component.scss']
 })
 export class AlertComponent {
+  @Input() sizeInCols = 'col-10 col-md-8 col-xl-6';
+  @Input() id = '';
 
+  constructor(public alertService: AlertService) {}
+
+  closeAlert(): void {
+    this.alertService.close(this.id);
+  }
 }

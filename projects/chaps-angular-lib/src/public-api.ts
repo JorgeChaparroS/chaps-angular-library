@@ -6,6 +6,7 @@ export * from './lib/chaps-angular-lib.module';
 
 // Components: 
 export * from './lib/components/alert/alert.component';
+export * from './lib/components/alert/alert.service';
 export * from './lib/components/button/button.component';
 export * from './lib/components/input/input.component';
 export * from './lib/components/loader/loader.component';
