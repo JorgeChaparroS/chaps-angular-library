@@ -1,0 +1,226 @@
+<chaps-lib-main-theme>
+    <h1 class="mb-5 pointer" (click)="onHideCV()">Angular components library. By Jorge Chaparro</h1>
+
+    <ng-container *ngIf="!showCV else jorgechaparrocv">
+        <section class="p-4 border">
+            <h1 class="mb-3">Tags and classes for typography: </h1>
+            <h1>This is how tag H1 or class .h1 look like</h1>
+            <h2>This is how tag H2 or class .h2 look like</h2>
+            <h3>This is how tag H3 or class .h3 look like</h3>
+            <h4>This is how tag H4 or class .h4 look like</h4>
+            <h5>This is how tag H5 or class .h5 look like</h5>
+            <h6>This is how tag H6 or class .h6 look like</h6>
+            <p class="text">This is how class .text looks like</p>
+            <p class="small-text">This is how class .small-text looks like</p>
+        </section>
+    
+        <div class="p-4 border row m-0">
+            <h1 class="mb-3">Components and widgets:</h1>
+    
+            <section class="row mb-3">
+                <h2>Buttons:</h2>
+                <h5>Characteristics:</h5>
+                <ul>
+                    <li class="text m-0">Inputs: They expect 'buttonLabel' (for its label) and 'buttonClass' (to apply bootstrap styling such as colors)</li>
+                    <li class="text m-0">Outputs: They have 'onClicked' output, which will emit when button is clicked.</li>
+                    <li class="text m-0">They will be its container width</li>
+                </ul>
+                <div class="col-12 col-md-6 col-xl-3 mb-2">
+                    <chaps-lib-button 
+                        [buttonLabel]="'Click success button!'"
+                        [buttonClass]="'success'"
+                        (onClicked)="onClickButton()">
+                    </chaps-lib-button>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3 mb-2">
+                    <chaps-lib-button 
+                        [buttonLabel]="'Click info button!'"
+                        [buttonClass]="'info'"
+                        (onClicked)="onClickButton()">
+                    </chaps-lib-button>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3 mb-2">
+                    <chaps-lib-button 
+                        [buttonLabel]="'Click warning button!'"
+                        [buttonClass]="'warning'"
+                        (onClicked)="onClickButton()">
+                    </chaps-lib-button>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3 mb-2">
+                    <chaps-lib-button 
+                        [buttonLabel]="'Click danger button!'"
+                        [buttonClass]="'danger'"
+                        (onClicked)="onClickButton()">
+                    </chaps-lib-button>
+                </div>
+            </section>
+    
+            <section class="row mb-3">
+                <h2>Input:</h2>
+                <h5>Characteristics:</h5>
+                <ul>
+                    <li class="text m-0">Inputs: They expect 'placeholder' (for its placeholder)</li>
+                    <li class="text m-0">Outputs: They have 'onValueChange' output, which will emit the current input value everytime it changes.</li>
+                    <li class="text m-0">To get the input value, it is also possible using NgModel and reactive forms.</li>
+                    <li class="text m-0">They will be its container width</li>
+                </ul>
+                <div class="col-6 col-xl-3 mb-2">
+                    <chaps-lib-input 
+                        [placeholder]="'Input using its output'"
+                        (onValueChange)="onInputChange($event)"></chaps-lib-input>
+                </div>
+                <div class="col-6 col-xl-3 mb-2">
+                    <p class="text">Value input using its emitter: {{ emitterValueInput }}</p>
+                </div>
+                <div class="col-6 col-xl-3 mb-2">
+                    <chaps-lib-input 
+                        [placeholder]="'Input using its output'"
+                        [(ngModel)]="ngModelValueInput"></chaps-lib-input>
+                </div>
+                <div class="col-6 col-xl-3 mb-2">
+                    <p class="text">Value input using ngModel: {{ ngModelValueInput }}</p>
+                </div>
+                <form [formGroup]="inputReactiveForm" class="col-6 col-xl-3 mb-2">
+                    <chaps-lib-input 
+                        [formControlName]="'inputName'"
+                        [placeholder]="'Input using reactive forms'"></chaps-lib-input>
+                </form>
+                <div class="col-6 col-xl-3 mb-2">
+                    <p class="text">Value input using reactive forms: {{ inputReactiveForm.get('inputName')?.value }}</p>
+                </div>
+            </section>
+    
+            <section class="row mb-3">
+                <h2>Paginator:</h2>
+                <ul>
+                    <li class="text m-0">Inputs: Use 'currentPage' if you need to initialize your paginator in a specific number of page. 'enableNextPage' will allow paginator to click next page (it is true by default). 'position' will locate the paginator on the left, center, or right (allows values 'start', 'center', 'end')</li>
+                    <li class="text m-0">Outputs: 'onPagination' will emit the current page everytime a pagination event is executed.</li>
+                </ul>
+                <div class="col-12 col-md-6 col-xl-3 mb-2 border">
+                    <chaps-lib-paginator></chaps-lib-paginator>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3 mb-2 border">
+                    <chaps-lib-paginator [enableNextPage]="true" [currentPage]="10" [position]="'center'"></chaps-lib-paginator>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3 mb-2 border">
+                    <chaps-lib-paginator [enableNextPage]="paginatorCurrentPage < 10" [currentPage]="paginatorCurrentPage" [position]="'start'" (onPagination)="onPaginationEvent($event)"></chaps-lib-paginator>
+                </div>
+            </section>
+    
+            <section class="row mb-3">
+                <h2>Loader:</h2>
+                <h5>Characteristics:</h5>
+                <ul>
+                    <li class="text m-0">Inputs: Loader has 'showLoading' (boolean that indicates when to show or hide the loader), 'loaderMessage' (optional, if not defined, message will not be shown) and 'customImageUrl' (optional, if not defined, a default gif will be shown) inputs.</li>
+                    <li class="text m-0">There is also a service that you can use to manipulate the loader visibility and message, in case that you are using the loader for an entire app and not just one component.</li>
+                </ul>
+                <div class="col-12 col-md-6 col-xl-3 mb-2">
+                    <chaps-lib-button 
+                        [buttonLabel]="'Click me to show loader!'"
+                        [buttonClass]="'primary'"
+                        (onClicked)="onShowLoader()">
+                    </chaps-lib-button>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3 mb-2">
+                    <chaps-lib-button 
+                        [buttonLabel]="'Click me to show loader using its service!'"
+                        [buttonClass]="'dark'"
+                        (onClicked)="onShowLoaderService()">
+                    </chaps-lib-button>
+                </div>
+                <chaps-lib-loader 
+                    [showLoading]="showLoader"
+                    [loaderMessage]="'Loading...'"></chaps-lib-loader>
+                <chaps-lib-loader 
+                    [showLoading]="loaderService.getLoading()"
+                    [loaderMessage]="loaderService.getMessage()"
+                    [customImageUrl]="'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Naruto_Shiki_Fujin.svg/1200px-Naruto_Shiki_Fujin.svg.png'"></chaps-lib-loader>
+            </section>
+    
+            <section class="row mb-3">
+                <h2>Alerts:</h2>
+                <h5>Characteristics:</h5>
+                <ul>
+                    <li class="text m-0">Inputs: To use alert component, it is require to use 'id' input (it has to be unique in the application). Also there is 'sizeInCols' input, which will allow you to define alert width base on bootstrap classes</li>
+                    <li class="text m-0">To show and hide the alert, use the AlertService's methods 'open' and 'close' (both of them expect ID as parameter)</li>
+                </ul>
+                <div class="col-12 col-md-6 col-xl-3 mb-2">
+                    <chaps-lib-button 
+                        [buttonLabel]="'Click me to show example of alert 1!'"
+                        [buttonClass]="'primary'"
+                        (onClicked)="alertService.open('alert-example-1')">
+                    </chaps-lib-button>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3 mb-2">
+                    <chaps-lib-button 
+                        [buttonLabel]="'Click me to show example of alert 2!'"
+                        [buttonClass]="'dark'"
+                        (onClicked)="alertService.open('alert-example-2')">
+                    </chaps-lib-button>
+                </div>
+                <div class="col-12 col-md-6 col-xl-3 mb-2">
+                    <chaps-lib-button 
+                        [buttonLabel]="'Click me to show example of alert 3!'"
+                        [buttonClass]="'outline-success'"
+                        (onClicked)="alertService.open('alert-example-3')">
+                    </chaps-lib-button>
+                </div>
+                <chaps-lib-alert [id]="'alert-example-1'">
+                    <h3>This is alert-example-1</h3>
+                    <p class="text">This is an example of how the alert will look like when sizeInCols is not defined</p>
+                </chaps-lib-alert>
+                <chaps-lib-alert [id]="'alert-example-2'"
+                    [sizeInCols]="'col-6 col-md-10 col-xl-3'">
+                    <h3>This is alert-example-2</h3>
+                    <p class="text">This is the way to customize the alert width</p>
+                </chaps-lib-alert>
+                <chaps-lib-alert [id]="'alert-example-3'">
+                    <h3>This is alert-example-3</h3>
+                    <p class="text">You can also use alertService.close(id) to close your modal by external components, such as buttons:</p>
+                    <chaps-lib-button 
+                        [buttonLabel]="'Close modal'"
+                        [buttonClass]="'outline-success'"
+                        (onClicked)="alertService.close('alert-example-3')">
+                    </chaps-lib-button>
+                </chaps-lib-alert>
+            </section>
+
+            <section class="row mb-3 justify-content-center">
+                <h2>Jorge Chaparro CV:</h2>
+                <h5>Characteristics:</h5>
+                <ul>
+                    <li class="text m-0">It is just author's CV.</li>
+                </ul>
+                <div class="col-12 col-md-6 mb-2">
+                    <chaps-lib-button 
+                        [buttonLabel]="'Check JorgeChaparro CV!'"
+                        [buttonClass]="'success'"
+                        (onClicked)="onShowCV()">
+                    </chaps-lib-button>
+                </div>
+            </section>
+        </div>
+    </ng-container>
+
+    <ng-template #jorgechaparrocv>
+        <chaps-lib-jorgechaparro-cv *ngIf="showCV"></chaps-lib-jorgechaparro-cv>
+        <section class="row mt-3 justify-content-center">
+            <div class="col-12 col-md-6">
+                <chaps-lib-button 
+                    [buttonLabel]="'Go back!'"
+                    [buttonClass]="'success'"
+                    (onClicked)="onHideCV()">
+                </chaps-lib-button>
+            </div>
+        </section>
+    </ng-template>
+
+    <footer class="row mx-0 align-items-center py-3 mt-3">
+        <ul class="row m-0 d-flex align-items-center">
+            <ol class="col-12 col-md-6 text-center">
+                <span class="pointer text" (click)="onShowCV()">Author CV</span>
+            </ol>
+            <ol class="col-12 col-md-6 text-center text">©2023</ol>
+        </ul>
+    </footer>
+</chaps-lib-main-theme>
