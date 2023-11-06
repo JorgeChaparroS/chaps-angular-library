@@ -1,7 +1,7 @@
 # chaps-angular-library
 Library for Angular reusable components 
 
-This application is just a landing page to show the components defined in the chaps-angular-lib (available in NPM if you want to use them). 
+This application is just a landing page to show the components defined in the chaps-angular-lib (available in NPM if you want to use it https://www.npmjs.com/package/chaps-angular-lib?activeTab=readme#chapsangularlib). 
 
 # Installation Steps: 
 1. In your workspace, clone the repository with "git clone https://github.com/JorgeChaparroS/chaps-angular-library"

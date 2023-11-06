@@ -1,6 +1,6 @@
 # ChapsAngularLib
 
-Library for Angular reusable components
+Library for Angular reusable components based on bootstrap.
 
 ## Build
 
@@ -18,3 +18,5 @@ Components should be created inside "components" folder. They have to be declare
 ### 0.0.1:
 This is the first library version. It includes the components: Alert, Button, Input, Loader, Main-Theme and Paginator and JorgeChaparroCV. 
 
+### 0.0.2:
+Bootstrap was added as a peerdependency. 
