@@ -12,6 +12,7 @@ export * from './lib/components/loader/loader.component';
 export * from './lib/components/main-theme/main-theme.component';
 export * from './lib/components/paginator/paginator.component';
 export * from './lib/components/jorgechaparro-cv/jorgechaparro-cv.component';
+export * from './lib/components/dropdown/dropdown.component';
 
 // Services: 
 export * from './lib/components/alert/alert.service';

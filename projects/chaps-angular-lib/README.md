@@ -20,3 +20,9 @@ This is the first library version. It includes the components: Alert, Button, In
 
 ### 0.0.2:
 Bootstrap was added as a dependency. 
+
+### 0.0.3: 
+Published at https://chaps-angular-lib.netlify.app/
+
+### 0.0.4: 
+Dropdown component included.  

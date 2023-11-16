@@ -8,6 +8,7 @@ import { MainThemeComponent } from './components/main-theme/main-theme.component
 import { JorgechaparroCvComponent } from './components/jorgechaparro-cv/jorgechaparro-cv.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CommonModule } from '@angular/common';
     LoaderComponent,
     PaginatorComponent,
     MainThemeComponent,
-    JorgechaparroCvComponent
+    JorgechaparroCvComponent,
+    DropdownComponent
   ],
   imports: [
     FormsModule,
@@ -30,7 +32,8 @@ import { CommonModule } from '@angular/common';
     LoaderComponent,
     PaginatorComponent,
     MainThemeComponent,
-    JorgechaparroCvComponent
+    JorgechaparroCvComponent,
+    DropdownComponent
   ]
 })
 export class ChapsAngularLibModule { }
