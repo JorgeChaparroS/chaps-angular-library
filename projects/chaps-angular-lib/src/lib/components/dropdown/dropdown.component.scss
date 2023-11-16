@@ -1,12 +1,10 @@
 @import "../../assets/styles/variables.scss";
 @import "../../assets//styles//commons.scss";
 
-input {
+select {
     border: none;
     border-bottom: 1px solid $black;
-    background-color: transparent;
-}
-
-input[type=text]:focus {
-    border-bottom: none;
+    .empty-option {
+        opacity: 0.7;
+    }
 }

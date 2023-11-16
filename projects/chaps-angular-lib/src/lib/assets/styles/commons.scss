@@ -1,0 +1,11 @@
+@import "../../assets/styles/variables.scss";
+
+.forms-component-dimensions {
+    height: 35px;
+    @media (min-width: $min-width-tablet) {
+        height: 40px;
+    }
+    @media (min-width: $min-width-desktop) {
+        height: 45px;
+    }
+}

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { LoaderService, AlertService } from 'chaps-angular-lib';
+import { LoaderService, AlertService, DropdownOption } from 'chaps-angular-lib';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +30,32 @@ export class AppComponent {
     inputName: new FormControl('', [])
   });
   
+  //For dropdowns: 
+  dropdownOptions: DropdownOption[] = [
+    { value: 'car1', name: 'Car #1' },
+    { value: 'car2', name: 'Car #2' },
+    { value: 'car3', name: 'Car #3' },
+    { value: 'car4', name: 'Car #4' },
+    { value: 'car5', name: 'Car #5' },
+  ];
+
+  dropdownValueEventEmmiter = '';
+  onOptionSelected(option: DropdownOption): void {
+    console.log("Option selected with emitter", option);
+    this.dropdownValueEventEmmiter = JSON.stringify(option);
+  }
+
+  ngModelDropdownValue = null;
+  ngModelDropdownValueInit = this.dropdownOptions[3].value;
+
+  dropdownReactiveForm: FormGroup = new FormGroup({
+    dropdownName: new FormControl('', [])
+  });
+
+  dropdownReactiveForm2: FormGroup = new FormGroup({
+    dropdownName: new FormControl(this.dropdownOptions[2].value, [])
+  });
+
   //For buttons:
   onClickButton(): void {
     console.log("Button was just clicked");

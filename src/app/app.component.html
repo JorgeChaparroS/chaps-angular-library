@@ -89,6 +89,65 @@
                     <p class="text">Value input using reactive forms: {{ inputReactiveForm.get('inputName')?.value }}</p>
                 </div>
             </section>
+
+            <section class="row mb-3">
+                <h2>Dropdown:</h2>
+                <h5>Characteristics:</h5>
+                <ul>
+                    <li class="text m-0">Inputs: They expect 'id' (should be unique in the application), 'placeholder' which will be shown if no option is being selected, 'options' (array of available options defined by DropdownOption interface)</li>
+                    <li class="text m-0">Outputs: They have 'onOptionSelected' output, which will emit the selection defined by DropdownOption interface everytime it changes.</li>
+                    <li class="text m-0">To get the dropdown value, it is also possible using NgModel and reactive forms. To show the label, it is necessary that variable attached to ngModel or controlForm has to be null.</li>
+                    <li class="text m-0">No option will be selected by default. But it is possible to set it using ngModel or reactive forms.</li>
+                    <li class="text m-0">They will be its container width</li>
+                </ul>
+                <div class="col-6 col-xl-3 mb-2">
+                    <chaps-lib-dropdown [id]="'dropdown-example-1'" 
+                        [placeholder]="'Select with eventemmiter'" 
+                        [options]="dropdownOptions" 
+                        (onOptionSelected)="onOptionSelected($event)"></chaps-lib-dropdown>
+                </div>
+                <div class="col-6 col-xl-3 mb-2">
+                    <p class="text">Dropdown value using its emitter: {{ dropdownValueEventEmmiter }}</p>
+                </div>
+                <div class="col-6 col-xl-3 mb-2">
+                    <chaps-lib-dropdown [id]="'dropdown-example-2'" 
+                        [placeholder]="'Select with ngModel'" 
+                        [options]="dropdownOptions" 
+                        [(ngModel)]="ngModelDropdownValue"></chaps-lib-dropdown>
+                </div>
+                <div class="col-6 col-xl-3 mb-2">
+                    <p class="text">Dropdown value using ngModel: {{ ngModelDropdownValue }}</p>
+                </div>
+                <div class="col-6 col-xl-3 mb-2">
+                    <chaps-lib-dropdown [id]="'dropdown-example-2b'" 
+                        [placeholder]="'Select with ngModel'" 
+                        [options]="dropdownOptions" 
+                        [(ngModel)]="ngModelDropdownValueInit"></chaps-lib-dropdown>
+                </div>
+                <div class="col-6 col-xl-3 mb-2">
+                    <p class="text">initialize option with ngModel: {{ ngModelDropdownValueInit }}</p>
+                </div>
+                <form [formGroup]="dropdownReactiveForm" class="col-6 col-xl-3 mb-2">
+                    <chaps-lib-dropdown 
+                        [formControlName]="'dropdownName'"
+                        [id]="'dropdown-example-3'" 
+                        [placeholder]="'Select with reactive forms'" 
+                        [options]="dropdownOptions" ></chaps-lib-dropdown>
+                </form>
+                <div class="col-6 col-xl-3 mb-2">
+                    <p class="text">Value input using reactive forms: {{ dropdownReactiveForm.get('dropdownName')?.value }}</p>
+                </div>
+                <form [formGroup]="dropdownReactiveForm2" class="col-6 col-xl-3 mb-2">
+                    <chaps-lib-dropdown 
+                        [formControlName]="'dropdownName'"
+                        [id]="'dropdown-example-3b'" 
+                        [placeholder]="'Select with reactive forms'" 
+                        [options]="dropdownOptions" ></chaps-lib-dropdown>
+                </form>
+                <div class="col-6 col-xl-3 mb-2">
+                    <p class="text">initialize option with reactive forms: {{ dropdownReactiveForm2.get('dropdownName')?.value }}</p>
+                </div>
+            </section>
     
             <section class="row mb-3">
                 <h2>Paginator:</h2>

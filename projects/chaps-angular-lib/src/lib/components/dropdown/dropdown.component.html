@@ -1,0 +1,12 @@
+<select [id]="id"
+    class="text w-100 py-1 px-2 pointer forms-component-dimensions"
+    [style.opacity]="selectedOption ? 1 : 0.7"
+    [(ngModel)]="selectedOption" 
+    (ngModelChange)="updateChanges()">
+    <option [value]="null"
+        class="empty-option"
+        disabled 
+        selected>{{ placeholder }}</option>
+    <option *ngFor="let option of options" 
+        [value]="option.value">{{ option.name }}</option>
+</select>
