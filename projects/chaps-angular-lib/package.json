@@ -1,9 +1,9 @@
 {
   "name": "chaps-angular-lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "peerDependencies": {
-    "@angular/common": "^17.0.3",
-    "@angular/core": "^17.0.3",
+    "@angular/common": "^17.0.0",
+    "@angular/core": "^17.0.0",
     "bootstrap": "^5.3.2"
   },
   "dependencies": {

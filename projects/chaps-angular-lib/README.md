@@ -33,3 +33,6 @@ Dropdown component included.
 
 ### 1.0.0: 
 IMPORTANT: Update to Angular 17. This could generate errors when trying to install the library in Projects above v17. You can always use "--force" command, but do it at your own risk.  
+
+### 1.0.1: 
+Update CV component to show information up to date.
