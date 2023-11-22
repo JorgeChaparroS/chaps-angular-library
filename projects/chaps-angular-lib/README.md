@@ -2,6 +2,10 @@
 
 Library for Angular reusable components based on bootstrap. Go check it out here: https://chaps-angular-lib.netlify.app/
 
+# Git Repository:
+
+https://github.com/JorgeChaparroS/chaps-angular-library
+
 ## Build
 
 Run `ng build chaps-angular-lib` to build the project. The build artifacts will be stored in the `dist/` directory.
