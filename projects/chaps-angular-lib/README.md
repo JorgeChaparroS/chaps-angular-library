@@ -36,3 +36,6 @@ IMPORTANT: Update to Angular 17. This could generate errors when trying to insta
 
 ### 1.0.1: 
 Update CV component to show information up to date.
+
+### 1.0.2: 
+Set background transparent for inputs and dropdowns so they fit its parent background.
