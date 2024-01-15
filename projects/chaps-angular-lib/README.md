@@ -39,3 +39,6 @@ Update CV component to show information up to date.
 
 ### 1.0.2: 
 Set background transparent for inputs and dropdowns so they fit its parent background.
+
+### 1.0.3: 
+Update CV component to show information up to date.

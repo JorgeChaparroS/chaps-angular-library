@@ -8,6 +8,7 @@ This application is just a landing page to show the components defined in the ch
 2. Type "cd chaps-angular-library"
 3. Install dependencies with "npm i"
 4. Run the application with "npm run start" or "ng serve"
+5. In case you modify any component from the library, you need to run "npm run build-lib", before you launch the app locally to wacth your updates.
 
 # Website: 
 If you do not want to install and launch the project locally, you can always go and check it online here: https://chaps-angular-lib.netlify.app/
